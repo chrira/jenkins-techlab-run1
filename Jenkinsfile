@@ -6,6 +6,6 @@ properties([
 
 node {
     stage('Greeting') {
-        echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL} in company ${params.COMPANY_PARAMETER}"
+        sh "echo \"Running ${env.BUILD_ID} on ${env.JENKINS_URL} in company ${params.COMPANY_PARAMETER}\""
     }
 }
