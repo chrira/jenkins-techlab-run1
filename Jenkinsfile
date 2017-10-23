@@ -1,5 +1,9 @@
 node {
     stage('Greeting') {
-        echo 'Scripted Hello, World!'
+        def company = 'puzzle'
+        echo 'join the ${company}'
+        echo "join the ${company}"
+        echo '''join the ${company}'''
+        echo """join the ${company}"""
     }
 }
