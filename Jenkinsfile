@@ -9,8 +9,8 @@ pipeline {
         pollSCM('H/5 * * * *')
     }
     tools {
-        tool name: 'jdk8_oracle', type: 'com.cloudbees.jenkins.plugins.customtools.CustomTool'
-        tool name: 'maven35', type: 'com.cloudbees.jenkins.plugins.customtools.CustomTool'
+        'com.cloudbees.jenkins.plugins.customtools.CustomTool'('jdk8_oracle')
+        'com.cloudbees.jenkins.plugins.customtools.CustomTool'('maven35')
     }
     stages {
         stage('Build') {
