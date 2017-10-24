@@ -9,12 +9,14 @@ pipeline {
         pollSCM('H/5 * * * *')
     }
     tools {
-        'com.cloudbees.jenkins.plugins.customtools.CustomTool'('jdk8_oracle')
-        'com.cloudbees.jenkins.plugins.customtools.CustomTool'('maven35')
+        jdk "jdk8"
+        'com.cloudbees.jenkins.plugins.customtools.CustomTool' "maven35"
     }
     stages {
         stage('Build') {
             steps {
+                sh 'java -version'
+
                 sh 'mvn --version'
             }
         }
